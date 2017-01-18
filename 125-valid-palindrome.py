@@ -4,8 +4,7 @@ class Solution(object):
         :type s: str
         :rtype: bool
         """
-        alphabetic = lambda f: ord('a') <= ord(f.lower()) <= ord('z')
-
+        alphabetic = lambda f: (ord('a') <= ord(f.lower()) <= ord('z')) or (ord('0') <= ord(f.lower()) <= ord('9'))
         left = 0
         right = len(s)-1
         while True:
@@ -21,13 +20,4 @@ class Solution(object):
             right -= 1
         return True
 
-
-
-
-print Solution().isPalindrome("A man, a plan, a canal: Panama")
-print Solution().isPalindrome("A race car")
-print Solution().isPalindrome("a")
 print Solution().isPalindrome("aa")
-print Solution().isPalindrome("aba")
-print Solution().isPalindrome("-------ab")
-print Solution().isPalindrome("")
